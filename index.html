@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css"></style>
+</head>
+<body>
+	<script>
+	function createStyle(content){
+		//创建样式节点
+		var style=document.getElementsByTagName("style")[0];
+		document.title=document.body.currentStyle
+		 if(style.styleSheet){// IE
+		 	style.styleSheet.cssText = content;
+		 } else {// w3c
+		 	var cssText = document.createTextNode(content);
+		 	style.appendChild(cssText);
+		 }
+		
+		//style['innerHTML'] = content
+
+		//获取头部标签对象
+		var heads = document.getElementsByTagName("head")[0];
+			heads.appendChild(style);
+		
+	}
+	
+	window.onload=function(){
+		//调用
+		document.getElementsByTagName("body")[0].innerHTML="<div data-hdz-shuai='aa' class='div1'></div>";
+		createStyle("html,body{margin:0;padding:0}.div1{width:200px;height:200px;background:red;}");
+
+		//创建DOM
+		var json={name:'a'}
+
+		alert(json.toString().toString())
+		//alert(JSON.stringify(json))
+		//alert(JSON.parse(json))
+		// alert(eval('('+json+')'))
+		//alert(document.getElementsByTagName("div")[0].dataset.hdzShuai)
+	}
+	</script>
+</body>
+</html>
