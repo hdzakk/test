@@ -3,222 +3,43 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<link rel="stylesheet" type="text/css" href="css/problem.css">
-	<script type="text/javascript" src='http://static.www.baobeio.com/public/js/jquery-1.11.1.min.js?20150424'></script>
-	<script type="text/javascript">
-	window.onload = function(){
-			problem.init();
-	}
-
-	var problem = function(){
-		return {
-			init : function(){
-				this.tabA = document.getElementById('wrap_title').getElementsByTagName('a');
-				this._content = document.getElementById('content');
-				this.showCont = this._content.children;
-				this.tabCont();
-				this.hashLoad();
-				var _this = this;
-				window.onhashchange=function(){_this.hashLoad();}
-			},
-			tabCont : function(){
-				var _this = this;
-				for (var i = 0; i < this.tabA.length; i++) {
-					this.tabA[i].index = i;
-					this.tabA[i].onclick = function(){
-						var hash = this.getAttribute('data-hash');
-						window.location.hash = hash;
-						_this.hashLoad();
-					}
-				};
-			},
-			hashLoad : function(){
-				var hash = window.location.hash.substring(1)||'page1';
-				for (var i = 0; i < this.tabA.length; i++) {
-					var conHash = this.showCont[i+1].getAttribute('data-hash');
-					this.tabA[i].className = '';
-					this.showCont[i+1].style.display = 'none';
-					if (conHash==hash) {
-						 this.tabA[i].className = 'current';
-						this.showCont[i+1].style.display = 'block';
-					};
-				};
-			}
-		}
-	}();
-	</script>
+	<style type="text/css"></style>
 </head>
 <body>
-	<div id='header'>
-		<div class='head_logo'>
-			<h1><img src="images/head_logo.png"></h1>
-		</div>
-	</div>
-	<div id='content'>
+	<script>
+	function createStyle(content){
+		//创建样式节点
+		var style=document.getElementsByTagName("style")[0];
+		document.title=document.body.currentStyle
+		 if(style.styleSheet){// IE
+		 	style.styleSheet.cssText = content;
+		 } else {// w3c
+		 	var cssText = document.createTextNode(content);
+		 	style.appendChild(cssText);
+		 }
 		
-		<div class='pro_title'>
-			<h3><i></i><span>常见问题</span></h3>
-			<div class='wrap_title' id='wrap_title'>
-				<a data-hash='page1' class='current' href="javascript:">1.客户达商品交易流程</a>
-				<a data-hash='page2' href="javascript:">2.软件各项流程默认处理时限</a>
-				<a data-hash='page3' href="javascript:">3.七天无理由退换货规则及操作流程</a>
-				<a data-hash='page4' href="javascript:">4.退换货的运费说明</a>
-				<a data-hash='page5' href="javascript:">5.服装商品质量问题如何定义？</a>
-				<a data-hash='page6' href="javascript:">6.电子产品、化妆品类的市场价限价销售问题</a>
-				<a data-hash='page7' href="javascript:">7.软件上的产品是否都有货？</a>
-				<a data-hash='page8' href="javascript:">8.供货商提交审核的产品不通过？</a>
-				<a data-hash='page9' href="javascript:">9.产品临时性下架或删除规则与实施细则</a>
-			</div>
-		</div> 
+		//style['innerHTML'] = content
 
+		//获取头部标签对象
+		var heads = document.getElementsByTagName("head")[0];
+			heads.appendChild(style);
 		
-		
-		<div class='show_cont'  data-hash='page1' style='display:block' >
-			<h3><i>1</i><span>客户达商品交易流程 :</span></h3>
-			<div class='one_show_cont'>
-				<img src="images/one_pic.png">
-			</div>
-			<p class='tagging'>注：15天自动确认收货,是考虑到淘宝的7天退换货+7天维权时间所取相近值。</p>
-		</div>
-		
-		<div class='show_cont' data-hash='page2'>
-			<h3><i>2</i><span>客户达软件各项流程默认处理时限 :</span></h3>
-			<div class='two_show_cont'>
-				<div class='matter'>
-					<p>A、一旦拆封无法复原，影响二次销售，商品不可退货（质量问题除外）；</p>
-					<p>B、所退换商品要求具备商品收到时完整的外包装、吊牌、配件、赠品等；</p>
-					<p>C、商品及配件有磨损、损坏、被使用的痕迹，影响二次销售的不予退换；</p>
-					<p>D、购买物品被洗过、穿过、用过、人为破坏或标牌拆卸等不提供退换。</p>
-				</div>
-			</div>
-		</div>
-		
-		<div class='show_cont' data-hash='page3'>
-			<h3><i>3</i><span>七天无理由退换货规则及操作流程 :</span></h3>
-			<div class='three_show_cont'>
-				<div class='mePro'>
-					 <h1>我们承诺：</h1>
-					 <p>
-					 	在客户达软件中采购的产品均为全新产品，客户达软件内的产品均支持7天无理由退换货服务（“消费者定作、定制类”以及“鲜活易腐类”商品除外），签收的产品进行退换货时，须保持出售时原状且配件、赠品、包装齐全，符合此条件的商品以签收日后的第二天零时起计算时间，满168小时为7天。
-					 </p>
-				</div>
-				<div class='flow'>
-					<h2>【退换货流程】：</h2>
-					<div class='t_pic'><img src="images/t_pic.png"></div>
-					<p>★&nbsp;&nbsp;特别注意：在供货商没退款之前，分销商注意一定不能退款给买家！</p>
-				</div>
-				<div class='matter'>
-					<h2>【注意事项】：</h2>
-					<p>A、一旦拆封无法复原，影响二次销售，商品不可退货（质量问题除外）；</p>
-					<p>B、所退换商品要求具备商品收到时完整的外包装、吊牌、配件、赠品等；</p>
-					<p>C、商品及配件有磨损、损坏、被使用的痕迹，影响二次销售的不予退换；</p>
-					<p>D、购买物品被洗过、穿过、用过、人为破坏或标牌拆卸等不提供退换。</p>
-				</div>
-			</div>
-		</div>
-		
-		<div class='show_cont' data-hash='page4'>
-			<h3><i>4</i><span>退换货的运费说明 :</span></h3>
-			<div class='two_show_cont'>
-				<div class='matter'>
-					<p>A、因发错货（包含发错颜色、码数或款型），以及产品质量存在问题等产生的退换货，来回运费均由供货商承担，赔付标准按供货商的发货运费金额赔付；</p>
-					<p>B、符合“7天无理由退换货规则”且不影响二次销售的非质量问题非发错货产生的退换货来回运费均由买家承担，退款时需将供货商发出货时产生运费退给供货商。</p>
-					<p>因此，强烈要求各位分销商开通运费险，以降低因退货产生的运费纠纷指数。</p>
-				</div>
-			</div>
-		</div>
-		
-		<div class='show_cont' data-hash='page5'>
-			<h3><i>5</i><span>关于服装商品质量问题的定义 :</span></h3>
-			<div class='five_show_cont'>
-				<div class='matter'>
-					<h2>【服装质量问题定义】：</h2>
-					<p>①、面料有明显破洞(直径≥=0.5CM)；</p>
-					<p>②、有明显一分钱硬币大小以上清洗不去的污渍；</p>
-					<p>③、左右明显3CM及以上的不对称（款式原因除外）；</p>
-					<p>④、拉链破损(人为损坏除外)；</p>
-					<p>⑤、面料明显的3CM及以上的抽丝滑纱（里衬除外）；</p>
-					<p>⑥、拼接处缝接处漏走线和开线裂口（1CM以上）；</p>
-					<p>⑦、其他地方1CM及以上的跳线漏线；</p>
-					<p>⑧、套装尺码不配套；</p>
-				</div>
-			</div>
-
-			<div class='five_show_cont five_bor'>
-				<div class='matter'>
-					<h2>【以下情况不视为服装质量问题】：</h2>
-					<p>①、小污点（可自行清理的）；</p>
-					<p>②、线头、褶皱（线头可自行清理，皱褶在仓库堆压和运输途中避免不了）；</p>
-					<p>③、因测量方法不同，尺寸误差2-3cm属正常；</p>
-					<p>④、外包装破损；</p>
-					<p>⑤、色差问题：因光线、角度及显示器的不同而导致的轻微视觉色差（不能接受一点色差的请慎拍）；</p>
-					<p>⑥、衣服有气味（布料在印花印染过程中都会使用化工原料，有残留的气味在所难免，一般过水和挂出透气后会消除）；</p>
-					<p>⑦、人为损坏；</p>
-					<p>⑧、主观问题（比如：“没有图片上好看”“不是我的风格”“太露太薄”“扣子没订好”“衣服打开有皱皱的”“不是我想象的” 不喜欢的款式，质量与想象中不同，颜色不喜欢、没有想象中的漂亮、太大、太小、穿着不舒服等等）；</p>
-					<p>⑨、实物品质与图片感觉上有差距，如做工精细度等 免责条款： 已拆牌、使用、或洗涤过的商品无论原因均不退换。</p>
-				</div>
-			</div>
-			<div class='five_show_cont five_bor'>
-				<div class='matter'>
-					<h2>★ 补充说明 ：</h2>
-					<p>为什么把这些因素排除在质量问题之外？</p>
-					<h2>我们是这样理解的：</h2>
-					<p>我们经营的是适合大众消费的服装，在追求款式新颖、质量过硬的基础上，尽量以最优惠的价格给代理供货，以求双赢。服装单件销售的利润是非常低的，而网上销售有一个特点，一件衣服如果要换，就必须付出昂贵的运输成本。这个运输成本有时候甚至与服装本身的成本接近。如果因为任何一点不喜欢的细微之处就要求退换货，这个花费的成本与其起到的作用，显然不太相称。如果是想长期合作，希望实现双赢的顾客一定都能够理解到这一点。</p>
-				</div>
-			</div>
-			<div class='five_show_cont five_bor'>
-				<div class='matter'>
-					<h2>【特别说明】：</h2>
-					<p>由于服装属感性消费品，同样一件衣服，有非常满意的客户也有不满意的客户。为了避免不必要的分歧，我们对质量问题的认定和处理做了详细的规定。</p>
-					<p>这些规定并不意味着我们的产品本身质量不好，而是为了避免因为衡量质量问题的标准的定义的不同而导致双方无尽的交易纠纷。</p>
-					<p>我们对待客户的反馈一律采用问题发生时客观的判断和资料照片的存档，您能够将问题发生处拍下来传给客服人员处理为最好，这样能够保证您在第一时间得到最好的服务。</p>
-					<p>不能提供照片说明问题，仅以个人主观口头描述，本店不提供处理！经营服饰的店主需要对此有所了解。在相互理解的基础上，我们愿意与您长期合作，为您提供最好的服务。</p>
-				</div>
-			</div>
-		</div>
-		
-		<div class='show_cont'  data-hash='page6'>
-			<h3><i>6</i><span>关于电子产品、化妆品类的市场价限价销售问题 :</span></h3>
-			<div class='six_show_cont'>
-					<p>所有电子产品、化妆品类产品的市场价格，以及客户达“品牌”专区内的商品，厂方均会有专门的部门进行监控，若您低价出售（即低于商品所标的市场价格出售）或者以活动价低价出售的，厂方将一律投诉到底并且不撤诉！</p>
-					<p>为了保障所有分销商的销售利润空间以及您自己的权益，请您务必保证不低于市场价进行销售此类限价产品。</p>
-			</div>
-		</div>
-		
-		<div class='show_cont'  data-hash='page7'>
-			<h3><i>7</i><span>件上的产品是否都有货？</span></h3>
-			<div class='two_show_cont'>
-				<div class='matter'>
-					<p>A、一般软件能拍下的都是有货的，但不排除一些已经清仓的产品未来的及更新，您可以拍下哦，若没货的，一般48小时内会联系您这边告知的。</p>
-					<p>B、如果厂家产品停产或者断货，会及时联系我们处理的，所以各位分销商每次登录软件时，请务必记得进行店铺体检并优化，以做到及时更新失效产品。</p>
-					<p>C、若在客户达上已经采购的商品缺货，分销商可以主动联系供货商咨询，或者和买家协商更换其他产品。</p>
-				</div>
-			</div>
-		</div>
-		
-		<div class='show_cont' data-hash='page8'>
-			<h3><i>8</i><span>关于供货商提交审核的产品不通过的问题</span></h3>
-			<div class='two_show_cont'>
-				<div class='matter'>
-					<p>以下几种情况，可能导致供货商提交的产品审核不通过：</p>
-					<p>①、产品进价过高；</p>
-					<p>②、主图以及其他描述图包含水印；</p>
-					<p>③、标题是否包含了：代理、一件代发等字眼；</p>
-					<p>④、产品属性不准确。</p>
-				</div>
-			</div>
-		</div>
-		
-		<div class='show_cont' data-hash='page9'>
-			<h3><i>9</i><span>产品临时性下架或删除规则与实施细则</span></h3>
-			<div class='six_show_cont'>
-					<p>经报道、通报、举报的产品质量或者供货商等存在问题，依照其情形严重程度，采取限制相应供货商发布产品、下架产品、删除产品、产品监管、帐号监管等处理措施对其进行临时性的管控，直至注销其账户。</p>
-					<p>因季节问题或其他问题需求，供货商也可做出产品的更换、产品信息的更新、缺货产品的下架删除等处理措施，但对于恶意变换者，我们也会给予相应警告或处罚。</p>
-			</div>
-		</div>
-
-
+	}
 	
-	</div>
+	window.onload=function(){
+		//调用
+		document.getElementsByTagName("body")[0].innerHTML="<div data-hdz-shuai='aa' class='div1'></div>";
+		createStyle("html,body{margin:0;padding:0}.div1{width:200px;height:200px;background:red;}");
+
+		//创建DOM
+		var json={name:'a'}
+
+		alert(json.toString().toString())
+		//alert(JSON.stringify(json))
+		//alert(JSON.parse(json))
+		// alert(eval('('+json+')'))
+		//alert(document.getElementsByTagName("div")[0].dataset.hdzShuai)
+	}
+	</script>
 </body>
 </html>
