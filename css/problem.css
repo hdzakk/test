@@ -1,0 +1,61 @@
+body,div,ul,ol,dl,dt,dd,li,h1,h2,h3,h4,h5,h6,p,input{margin:0;padding:0;font-family:inherit;font-size: 12px;font-family: tahoma,\5b8b\4f53,arial;}
+i,em{font-style: normal;}
+body{background: #F4F4F4;}
+ol,ul,li{list-style:none;display: block;}
+img{margin:0;padding:0;border:none}
+a{text-decoration: none; color: #666}
+.pro_title h3 i,.show_cont h3 i{background: url(../images/ico.png) no-repeat;}
+
+#header{width: 100%;height: 70px;background: #494949;min-width: 1180px}
+#header .head_logo{width: 1180px;height: 100%;margin: 0 auto;position: relative;}
+.head_logo h1{height: 35px;width: 198px;position: absolute;bottom: 10px;}
+
+#content{width: 1180px;margin: 0 auto;margin-bottom: 20px;position: relative;overflow: hidden;}
+#content:after{content: '';height: 1px;width: 100%;background: #fff;position: absolute;left: 0;bottom: 1px;}
+#content .pro_title{width: 100%;}
+#content .pro_title h3{width: 100%;height: 30px;line-height: 30px;margin-top: 50px;border-bottom: 1px solid #DADADA;padding-bottom: 6px;position: relative;}
+#content .pro_title h3:after{content: '';height: 1px;width: 100%;background: #FBFBFB;position: absolute;left: 0;bottom: 0px;}
+.pro_title h3 i{width: 30px;height: 30px;background-position: 0 2px;display:block;float: left;}
+.pro_title h3 span{height: 30px;display:block;float: left;font: 18px '\5fae\8f6f\96c5\9ed1';color: #7C7C7C;
+}
+.pro_title div.wrap_title{width: 100%;height: auto;padding-bottom: 20px;border-bottom: 1px solid #DADADA;padding-top: 5px;position: relative;}
+div.wrap_title:after{content: "";display: block;height: 0;clear: both;visibility: hidden;  }
+div.wrap_title:before{content: "";display: block;height: 1px;width: 100%;background: #FBFBFB;position: absolute;left: 0;bottom: 1px; }
+div.wrap_title a{display: inline-block;padding: 4px 20px;border: 1px solid #C2C2C2;color: #858585;font:14px '\5fae\8f6f\96c5\9ed1';margin:15px 10px 0 0;background: #fff;}
+
+div.wrap_title a:hover{border-color: #6CC4F2;color: #008DD5;}
+div.wrap_title a.current,div.wrap_title a.current:hover{background: #49B5EE;color: #fff;border-color: #0155D4;}{background: #49B5EE;color: #fff;border-color: #0155D4;}
+/*显示内容*/
+#content .show_cont{width: 100%;height: auto;margin-top: 25px;border-bottom: 1px solid #C9C9C9;padding-bottom: 20px;display: none;}
+#content .show_cont h3{width: 100%;height: 30px;line-height: 30px;}
+.show_cont h3 i{width: 16px;height: 18px;background-position: -32px 0px;display:block;float: left;text-align: center;line-height: 17px;color: #fff;font-family: '宋体'}
+.show_cont h3 span{height: 16px;display:block;float: left;font:bold 14px '\5fae\8f6f\96c5\9ed1';margin-left: 10px;color: #333;line-height: 17px;
+}
+
+/*问题1*/
+.one_show_cont{text-align: center;margin-top: 35px;}
+.show_cont .tagging{width: 100%;margin-top: 40px;color: #818181;font-family: '宋体';}
+/*问题2*/
+.two_show_cont{width: 95%;height: auto;margin: 0 auto;}
+.two_show_cont .matter{width: 100%;}
+.two_show_cont .matter p{color: #7C7C7C;margin: 25px 0;}
+/*问题3*/
+.three_show_cont{width: 95%;height: auto;margin: 0 auto;margin-top: 20px;}
+.three_show_cont .mePro{width: 95%;height: 70px;border-radius: 3px;overflow: hidden;border: 2px solid #F9AF81;background: #FFFAE7;}
+.three_show_cont .mePro h1{height: 100%;width: 130px;text-align: center;font:600 18px/70px \5fae\8f6f\96c5\9ed1;background: #FFC9AF;color: #F66D2E;float: left;}
+.three_show_cont .mePro p{float: left;padding: 5px 0 0px 20px;width: 900px;line-height: 30px;color: #7C7C7E;}
+.three_show_cont .flow{margin-top: 30px;}
+.three_show_cont .flow h2,.three_show_cont .matter h2,.five_show_cont .matter h2{color: #7C7C7C;font-weight: normal;font-size: 14px;margin-left: -5px;}
+.three_show_cont .flow .t_pic{margin-top: 35px;}
+.three_show_cont .flow p{color: #F67842;margin-top: 40px;}
+.three_show_cont .matter{width: 100%;margin-top: 40px;}
+.three_show_cont .matter p{color: #7C7C7C;margin: 25px 0;}
+/*问题5*/
+.five_show_cont{width: 95%;height: auto;margin: 0 auto;margin-top: 25px;}
+.five_show_cont .matter{width: 100%;}
+.five_show_cont .matter p{color: #7C7C7C;margin: 20px 0;line-height: 25px;}
+.five_bor{border-top: 1px solid #DADADA;padding-top: 30px;position: relative;}
+.five_bor:after{content: '';height: 1px;width: 100%;background: #FDFDFD;position: absolute;left: 0;top: -2px;}
+/*问题6*/
+.six_show_cont{width: 95%;height: auto;margin: 0 auto;margin-top: 10px;}
+.six_show_cont p{color: #7C7C7C;line-height: 40px;width: 80%;}
